@@ -21,7 +21,7 @@ $checkboxes = @()
 for ($i = 0; $i -lt $programs.Count; $i++) {
 $checkbox = New-Object System.Windows.Forms.CheckBox
 $checkbox.Text = $programs[$i].Name
-$checkbox.Location = New-Object System.Drawing.Point(20, 20 + ($i * 30))
+$checkbox.Location = New-Object System.Drawing.Point(20, (20 + ($i * 30)))
 $checkbox.Size = New-Object System.Drawing.Size(200, 20)
 $form.Controls.Add($checkbox)
 $checkboxes += $checkbox
@@ -31,7 +31,7 @@ $checkboxes += $checkbox
 $button = New-Object System.Windows.Forms.Button
 $button.Text = "Установить"
 $button.Size = New-Object System.Drawing.Size(100, 30)
-$button.Location = New-Object System.Drawing.Point(140, 20 + ($programs.Count * 30))
+$button.Location = New-Object System.Drawing.Point(140, (20 + ($programs.Count * 30)))
 $button.Add_Click({
 $selected = @()
 for ($i = 0; $i -lt $checkboxes.Count; $i++) {
