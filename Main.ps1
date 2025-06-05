@@ -1,23 +1,19 @@
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-# Создаём форму
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Выберите программы для установки"
 $form.Size = New-Object System.Drawing.Size(400,300)
 $form.StartPosition = "CenterScreen"
 
-# Список программ
 $programs = @(
     @{ Name = "Google Chrome"; Id = "Google.Chrome" },
     @{ Name = "NanaZip"; Id = "M2Team.NanaZip" },
     @{ Name = "Notepad++"; Id = "Notepad++.Notepad++" }
 )
 
-# Массив чекбоксов
 $checkboxes = @()
 
-# Добавляем чекбоксы
 for ($i = 0; $i -lt $programs.Count; $i++) {
     $checkbox = New-Object System.Windows.Forms.CheckBox
     $checkbox.Text = $programs[$i].Name
@@ -27,7 +23,6 @@ for ($i = 0; $i -lt $programs.Count; $i++) {
     $checkboxes += $checkbox
 }
 
-# Кнопка "Установить"
 $button = New-Object System.Windows.Forms.Button
 $button.Text = "Установить"
 $button.Size = New-Object System.Drawing.Size(100, 30)
